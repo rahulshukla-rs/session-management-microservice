@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "b197463e-e287-4ef3-b15d-5f19f7de3706",
+		"name": "session-management",
+		"description": "Basic Session Management Micro Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				},
+				"description": "Home URL of project\n\n|URL: localhost:5000"
+			},
+			"response": []
+		},
+		{
+			"name": "Register New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "rahul2",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"register"
+					]
+				},
+				"description": "This is API for register new user & store in database.\n\n|URL: localhost:5000/user/register\n\n|Method: POST\n\n|Route: Public\n\n|Params:\n- username\n- password"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "rahul",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"login"
+					]
+				},
+				"description": "This is API for login user.\n\n|URL: localhost:5000/user/login\n\n|Method: POST\n\n|Route: Public\n\n|Params:\n- username\n- password"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "084e4f42-b3e0-47af-8cab-cdbebb2e22a1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/user/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"logout"
+					]
+				},
+				"description": "This is API for login user.\n\n|URL: localhost:5000/user/logout\n\n|Method: POST\n\n|Route: Private\n\n|Header:\n- Token\n\n|Params:\n- Null"
+			},
+			"response": []
+		},
+		{
+			"name": "sessionCheck",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:5000/user/sessionCheck?token=XXX",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"sessionCheck"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						}
+					]
+				},
+				"description": "This is API for check token is valid or not.\n\n|URL: localhost:5000/user/sessionCheck?token=XXX\n\n|Method: GET\n\n|Route: Public\n\n|Params:\n- token"
+			},
+			"response": []
+		}
+	]
+}
