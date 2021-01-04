@@ -19,6 +19,10 @@ https://github.com/rahulshukla-rs/session-management-microservice/blob/master/RE
 
 https://documenter.getpostman.com/view/7448136/TVt2d41w
 
+## Postman Collection
+
+https://github.com/rahulshukla-rs/session-management-microservice/blob/master/session-management.postman_collection.json
+
 ## Setup
 Clone this repository:
 
