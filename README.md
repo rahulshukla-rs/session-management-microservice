@@ -1,19 +1,14 @@
-# node-express-mongodb-folder-structure
-Node + Express + MongoDB (Folder Structure) with JWT Authorization + Custom ACL (Async / Await) ES6 Features.
+# session-management-microservice
+Basic Session Management Micro Services.
 
-Note: This is use for Advance level API using new features.
-
-I have created one more folder structure for Basic use, without JWT Auth & Middelware<br>
-Link: https://github.com/rahulshukla-rs/node-express-mongodb-folder-structure
-
-<b>Organizing our application:</b>
+## Folder Structure:
 
 Inside the MainApp directory, I have created the following four subdirectories
 
 - app.js
 - config
   - server.js
-  - acl.js
+  - session.js
 - api
   - controllers
   - models
@@ -22,3 +17,29 @@ Inside the MainApp directory, I have created the following four subdirectories
 - package.json
 - .gitignore
 - node_modules
+
+##  Requirement 
+- Node: 14.X 
+- NPM: 6.X
+- MongoDB: 4.X
+
+## Setup
+Clone this repository:
+
+git clone https://github.com/rahulshukla-rs/session-management-microservice
+
+## Navigate to the project Folder:
+
+cd session-management-microservice
+
+## Install dependencies:
+
+npm install
+
+## Run App:
+
+Note: MongoDB Running on local before start
+(If mongo on diffrent host & port, Please change in config/server.js)
+
+npm start
+
