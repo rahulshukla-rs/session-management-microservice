@@ -1,27 +1,23 @@
 # session-management-microservice
 Basic Session Management Micro Services.
 
-## Folder Structure:
-
-Inside the MainApp directory, I have created the following four subdirectories
-
-- app.js
-- config
-  - server.js
-  - session.js
-- api
-  - controllers
-  - models
-  - routes
-  - middleware
-- package.json
-- .gitignore
-- node_modules
-
 ##  Requirement 
 - Node: 14.X 
 - NPM: 6.X
 - MongoDB: 4.X
+
+## Souce Code (Github)
+
+https://github.com/rahulshukla-rs/session-management-microservice
+
+## Local Setup Steps
+
+https://github.com/rahulshukla-rs/session-management-microservice/blob/master/README.md
+
+
+## API Document
+
+https://documenter.getpostman.com/view/7448136/TVt2d41w
 
 ## Setup
 Clone this repository:
@@ -43,3 +39,21 @@ Note: MongoDB Running on local before start
 
 npm start
 
+++++++++++++++
+
+## Folder Structure:
+
+Inside the MainApp directory, I have created the following four subdirectories
+
+- app.js
+- config
+  - server.js
+  - session.js
+- api
+  - controllers
+  - models
+  - routes
+  - middleware
+- package.json
+- .gitignore
+- node_modules
