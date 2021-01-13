@@ -37,6 +37,14 @@ Route: Private
 */
 router.get("/sessionCheck", UserController.sessionCheck);
 
+/* 
+Name: profile
+Method: GET
+Des: Get User profile
+Route: Private
+*/
+router.get("/profile", checkAuth, UserController.profile);
+
 
 
 module.exports = router;

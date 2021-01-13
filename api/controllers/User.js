@@ -24,6 +24,7 @@ exports.register = async (req, res) => {
             _id: new mongoose.Types.ObjectId(),
             username: req.body.username,
             password: req.body.password,
+            role: req.body.role ? req.body.role : 'user',
             status: 1,
             maxActiveSession: 1
         });
@@ -89,6 +90,7 @@ exports.login = async (req, res) => {
                     else {
                         let token = uuidv4();
                         req.session.username = user[0].username;
+                        req.session.role = user[0].role;
                         req.session.token = token;
                         return res.status(200).json({ token });
                     }
@@ -124,3 +126,31 @@ exports.sessionCheck = async (req, res) => {
         return res.status(400).json({ message: error.toString() })
     }
 };
+
+exports.profile = async (req, res) => {
+    try {
+        
+        usernameValue = req.session.username;
+        if(!req.session.username)
+        {
+            return res.status(401).json({ message: "No accress!!." });
+        }
+        if(req.query.username != "" && req.query.username != undefined)
+        {
+            usernameValue = req.query.username;
+        }
+    
+        if (req.session.role != 'admin' && req.session.username != usernameValue) {
+            return res.status(401).json({ message: "No accress!!." });
+        }
+        
+        const user = await User.find({ "username": usernameValue })
+        if (user.length < 1) {
+            return res.status(400).json({ message: "Invalid User." });
+        }
+        return res.status(200).json({ username: user[0].username, status: user[0].status, maxActiveSession: user[0].maxActiveSession })
+
+    } catch (error) {
+        return res.status(400).json({ message: error.toString() })
+    }
+}
